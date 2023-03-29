@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ article.title }}
+{% endblock %}
+
+{% block body %}
+<div class="container marketing">
+    <hr class="featurette-divider">
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">{{ article.title }}</h2>
+        <p class="lead">{{ article.specs_short }}</p>
+        <hr class="featurette-divider">
+        <div class="alert alert-info">
+            <p>{{ article.text }}</p>
+            <p> <b>Цена: {{ article.price }} ₽</b></p>
+            <button href="" class="btn btn-success">Купить</button><br><br>
+            <a href="/products/{{ article.id }}/edit" class="btn btn-warning">Редактировать</a>
+            <a href="/products/{{ article.id }}/delete" class="btn btn-danger">Удалить</a>
+        </div>
+        <hr class="featurette-divider">
+      </div>
+      <div class="col-md-5 order-md-1">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="128" height="128" xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"></svg><img src="/static/imgs/stock.jpg">
+      </div>
+    </div>
+</div>
+<div class="container mt-5">
+    <hr class="featurette-divider">
+    <p><b>Полные характеристики: </b><br>{{ article.specs }}</p>
+    <hr class="featurette-divider">
+</div>
+{% endblock %}

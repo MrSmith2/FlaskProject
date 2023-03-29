@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Редактировать информацию о товаре
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Редактировать информацию о товаре</h1>
+    <form method="post">
+        <input type="text"   class="form-control" name="title" id="title" value="{{ article.title }}" placeholder="Введите название"><br>
+        <input type="number" class="form-control" name="price" id="price" value="{{ article.price }}" placeholder="Введите цену"><br>
+        <textarea            class="form-control" name="text"  id="text"  placeholder="Введите описание">{{ article.text }}</textarea><br>
+        <textarea            class="form-control" name="specs_short"  id="specs_short"  placeholder="Введите краткие характеристики">{{ article.specs_short }}</textarea><br>
+        <textarea            class="form-control" name="specs"  id="specs"  placeholder="Введите полные характеристики">{{ article.specs }}</textarea><br>
+        <button              class="btn btn-success" type="submit">Обновить информацию о товаре</button><br>
+    </form>
+</div>
+{% endblock %}
